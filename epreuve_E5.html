@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon BTS SIO - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" >
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon BTS SIO - Portfolio - E5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" >
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="sub-page">
+
+    <nav class="navbar">
+        <div class="logo">NILS HAMITOUCHE</div>
+        <div class="menu-hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="bts_sio.html">BTS SIO</a></li>
+            <li><a href="entreprise.html">Entreprise</a></li>
+            <li><a href="certif.html">Certifications</a></li>
+            <li><a href="epreuve_E5.html" class="active">E5</a></li>
+            <li><a href="epreuve_E6.html">E6</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="sub-header">
+        <div class="hero-content">
+            <h1>Veille Technologique (E5)</h1>
+            <p>Analyse et suivi des innovations du secteur</p>
+        </div>
+    </header>
+
+    <main class="content-container">
+        
+        <section class="veille-presentation" style="margin-bottom: 60px;">
+            <h2 style="font-family: 'Montserrat'; color: #00d4ff; margin-bottom: 25px; text-transform: uppercase; font-size: 1.2rem; letter-spacing: 1px;">
+                Ma Méthodologie de Veille
+            </h2>
+            
+            <div class="skill-card active" style="max-height: none; cursor: default; border-left: 4px solid #00d4ff;">
+                <div class="skill-content" style="opacity: 1; margin-top: 0;">
+                    <p style="margin-bottom: 15px;">
+                        <strong>Sujet de veille :</strong> [Insère ton sujet ici, ex: La Cybersécurité Cloud]
+                    </p>
+                    <p style="margin-bottom: 15px; color: #ccc;">
+                        Dans le cadre de l'épreuve E5, j'ai mis en place un système de surveillance automatisé pour suivre les évolutions technologiques et les enjeux de sécurité actuels.
+                    </p>
+                    <ul style="color: #ccc; list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 8px;">🔹 <strong>Outils :</strong> Flux RSS, Google Alerts, Agrégateurs.</li>
+                        <li style="margin-bottom: 8px;">🔹 <strong>Fréquence :</strong> Consultation hebdomadaire et synthèse.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 50px 0;">
+
+        <section class="veille-flux">
+            <h2 style="font-family: 'Montserrat'; color: #00d4ff; margin-bottom: 30px; text-transform: uppercase; font-size: 1.2rem; letter-spacing: 1px;">
+                Flux d'actualités en direct
+            </h2>
+            
+            <div id="feed-container">
+                <div class="loader" style="text-align:center; padding: 50px; color: #00d4ff;">
+                    Chargement du flux d'informations...
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
