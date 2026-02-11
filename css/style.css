@@ -27,9 +27,22 @@
 body {
     font-family: 'Inter', sans-serif;
     color: var(--white);
-    background: url('images/main_backscreen_nils_hamitouche.webp') no-repeat fixed center/cover;
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Page d'accueil avec ton fond d'écran */
+.home-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/main_backscreen_nils_hamitouche.webp') no-repeat fixed center/cover;
+    z-index: -2;
 }
 
 .home-page {
@@ -37,8 +50,78 @@ body {
     overflow: hidden;
 }
 
+/* Fond cyber pour les sub-pages uniquement */
+.sub-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(125deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+    z-index: -2;
+}
+
+/* Grille cyber animée pour sub-pages uniquement */
+.sub-page::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+/* Autres pages */
 .sub-page {
     overflow-y: auto;
+    position: relative;
+}
+
+/* Effets de lumière cyber pour sub-pages uniquement */
+.sub-page .content-container::before,
+.sub-page .certif-container::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(0, 255, 157, 0.04) 0%, transparent 50%);
+    animation: lightMove 30s ease-in-out infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes lightMove {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(30px, -30px) rotate(120deg);
+    }
+    66% {
+        transform: translate(-20px, 20px) rotate(240deg);
+    }
 }
 
 /* --- NAVIGATION --- */
@@ -54,6 +137,38 @@ body {
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Navbar style cyber pour sub-pages */
+.sub-page .navbar {
+    background: rgba(10, 14, 39, 0.9);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.sub-page .navbar::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--primary) 50%, 
+        transparent 100%);
+    box-shadow: 0 0 10px var(--primary);
+    animation: navPulse 3s ease-in-out infinite;
+}
+
+@keyframes navPulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 .logo {
@@ -204,13 +319,54 @@ body {
 /* --- SUB PAGES --- */
 .sub-header {
     height: 40vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), var(--dark));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(13, 13, 13, 0.9));
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Lignes cyber animées dans le header */
+.sub-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--primary) 50%, 
+        transparent 100%);
+    animation: scanLine 4s linear infinite;
+}
+
+.sub-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 212, 255, 0.5) 20%, 
+        rgba(0, 212, 255, 0.5) 80%, 
+        transparent 100%);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+@keyframes scanLine {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%);
+    }
 }
 
 .content-container,
@@ -218,48 +374,100 @@ body {
     max-width: 1000px;
     margin: -50px auto 50px;
     padding: 40px;
-    background: var(--dark-glass);
+    background: rgba(10, 14, 39, 0.85);
     backdrop-filter: blur(20px);
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: 
+        var(--shadow-lg),
+        0 0 30px rgba(0, 212, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     position: relative;
+}
+
+/* Coins cyber */
+.content-container::before,
+.content-container::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary);
+    opacity: 0.6;
+}
+
+.content-container::before {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.content-container::after {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
 }
 
 .certif-container {
     margin: 30px auto;
     padding: 20px 15px;
-    background: rgba(20, 20, 20, 0.85);
 }
 
 /* --- SKILL CARDS (ACCORDIONS) --- */
 .skill-card {
-    background: var(--light-glass);
+    background: rgba(0, 212, 255, 0.03);
     padding: 20px;
     border-radius: 12px;
     border-left: 4px solid var(--primary);
+    border-right: 1px solid rgba(0, 212, 255, 0.1);
     cursor: pointer;
     margin-bottom: 20px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     max-height: 70px;
     overflow: hidden;
+    position: relative;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(0, 212, 255, 0.1), 
+        transparent);
+    transition: width 0.6s ease;
+}
+
+.skill-card:hover::before {
+    width: 100%;
 }
 
 .skill-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .skill-header h3 {
     font-size: 1.1rem;
     font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .toggle-icon {
     font-size: 1.5rem;
     color: var(--primary);
     transition: transform 0.4s ease;
+    filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.5));
 }
 
 .skill-content {
@@ -274,10 +482,14 @@ body {
 }
 
 .skill-card.active {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(0, 212, 255, 0.08);
     max-height: 800px;
     border-left-color: var(--white);
-    box-shadow: var(--shadow-md);
+    border-right-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        var(--shadow-md),
+        0 0 20px rgba(0, 212, 255, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .skill-card.active .skill-content {
@@ -286,6 +498,7 @@ body {
 
 .skill-card.active .toggle-icon {
     transform: rotate(45deg);
+    color: var(--white);
 }
 
 /* --- CERTIFICATIONS --- */
@@ -399,10 +612,11 @@ body {
     color: var(--primary);
     font-size: 1.4rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     margin-bottom: 25px;
     position: relative;
     padding-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
 }
 
 .section-title::after {
@@ -412,7 +626,20 @@ body {
     left: 0;
     width: 60px;
     height: 3px;
-    background: var(--primary);
+    background: linear-gradient(90deg, var(--primary), transparent);
+    box-shadow: 0 0 10px var(--primary);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 10px var(--primary);
+    }
+    50% {
+        opacity: 0.6;
+        box-shadow: 0 0 20px var(--primary);
+    }
 }
 
 .section-intro,
@@ -431,19 +658,43 @@ body {
 
 .design-card,
 .flux-info-box {
-    background: var(--light-glass);
+    background: rgba(0, 212, 255, 0.03);
     padding: 25px;
     border-radius: 12px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
     border-left: 4px solid var(--primary);
     transition: all var(--transition);
     box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
 }
 
-.design-card:hover {
+.design-card::before,
+.flux-info-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.design-card:hover,
+.flux-info-box:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.12);
-    border-left-color: var(--white);
-    box-shadow: 0 15px 35px rgba(0, 212, 255, 0.2);
+    background: rgba(0, 212, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.design-card:hover::before,
+.flux-info-box:hover::before {
+    opacity: 1;
 }
 
 .design-card-title,
@@ -452,12 +703,18 @@ body {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: var(--primary);
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .design-card-text {
     color: var(--gray);
     font-size: 0.95rem;
     line-height: 1.6;
+    position: relative;
+    z-index: 1;
 }
 
 /* --- FLUX --- */
