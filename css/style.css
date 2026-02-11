@@ -364,3 +364,98 @@ body {
     font-size: 1rem;
     line-height: 1.6;
 }
+
+/* --- SECTION DESIGN --- */
+.design-section {
+    margin-top: 60px;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    color: #00d4ff;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.section-intro {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.design-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #00d4ff;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.design-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+    border-left-color: #ffffff;
+}
+
+.design-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.design-card-text {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- SECTION FLUX --- */
+.flux-intro {
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.flux-info-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-left: 4px solid #00d4ff;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.flux-info-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #00d4ff;
+}
+
+.flux-info-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.flux-info-box li {
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+.flux-conclusion {
+    margin-top: 40px;
+    color: #aaa;
+    font-size: 0.95rem;
+    text-align: center;
+    font-style: italic;
+}

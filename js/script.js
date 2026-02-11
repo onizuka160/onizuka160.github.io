@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // URL du flux que tu as choisi
-const RSS_URL = 'https://www.lemondeinformatique.fr/flux-rss/thematique/reseaux/rss.xml';
+const RSS_URL = 'https://news.google.com/rss/search?q=Zero+Trust+Network+Access+security&hl=fr&gl=FR&ceid=FR:fr';
 const STORAGE_KEY = 'ma_veille_cache';
 
 async function loadFeed() {
