@@ -507,9 +507,44 @@ body {
 }
 
 /* --- RESPONSIVE --- */
+
+/* Tablettes et petits écrans */
+@media (max-width: 1024px) {
+    .content-container,
+    .certif-container {
+        max-width: 90%;
+        padding: 35px;
+    }
+
+    .design-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .certif-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+/* Mobile - Tablettes portrait */
 @media (max-width: 768px) {
+    :root {
+        --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.5);
+        --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    body {
+        font-size: 15px;
+        background-attachment: scroll; /* Meilleure performance mobile */
+    }
+
+    /* Navigation mobile améliorée */
     .navbar {
         padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
     }
 
     .menu-hamburger {
@@ -517,42 +552,293 @@ body {
         flex-direction: column;
         gap: 5px;
         cursor: pointer;
+        z-index: 1001;
     }
 
     .menu-hamburger span {
-        width: 25px;
+        width: 28px;
         height: 3px;
         background: var(--white);
         transition: var(--transition);
+        border-radius: 2px;
+    }
+
+    /* Animation hamburger en X */
+    .menu-hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .menu-hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 5%;
-        background: rgba(0, 0, 0, 0.95);
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.98);
         backdrop-filter: blur(20px);
-        padding: 20px;
-        border-radius: 15px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        gap: 15px;
+        padding: 80px 30px 30px;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        gap: 25px;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
     }
 
     .nav-links.open {
         display: flex;
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Hero mobile optimisé */
+    .hero-section {
+        padding: 0 20px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2rem, 10vw, 2.8rem);
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+        margin-bottom: 25px;
+    }
+
+    /* Boutons mobile */
+    .btn {
+        font-size: 0.75rem;
+        padding: 12px 25px;
+        width: 100%;
+        max-width: 280px;
+        margin: 8px 0;
+    }
+
+    /* Headers mobile */
+    .sub-header {
+        height: 35vh;
+        min-height: 250px;
+        padding-top: 70px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Conteneurs mobile */
+    .content-container,
+    .certif-container {
+        margin: 20px 15px;
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+
+    .veille-single-container {
+        padding: 0 15px;
+        margin: 30px auto;
+    }
+
+    /* Cards mobile optimisés */
+    .skill-card {
+        padding: 15px;
+        border-radius: 10px;
+        max-height: 65px;
+    }
+
+    .skill-header h3 {
+        font-size: 1rem;
+    }
+
+    .toggle-icon {
+        font-size: 1.3rem;
+    }
+
+    .skill-content {
+        margin-top: 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Grilles mobile */
+    .design-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .certif-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 15px;
+    }
+
+    .certif-card img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .certif-label {
+        font-size: 0.8rem;
+        margin-top: 8px;
+    }
+
+    /* Articles mobile */
+    .article-card {
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .article-title {
+        font-size: 1.2rem;
+    }
+
+    .article-description {
+        font-size: 0.95rem;
+    }
+
+    /* Sections mobile */
+    .section-title {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .section-intro,
+    .flux-intro {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .design-card,
+    .flux-info-box {
+        padding: 20px;
+    }
+
+    .design-card-title,
+    .flux-info-box h3 {
+        font-size: 1.1rem;
+    }
+
+    .design-card-text {
+        font-size: 0.9rem;
+    }
+
+    .flux-conclusion {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+}
+
+/* Mobile - Petits écrans */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 12px 4%;
+    }
+
+    .logo {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .nav-links {
+        width: 80%;
+        padding: 70px 20px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.8rem, 9vw, 2.3rem);
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
     }
 
     .content-container,
     .certif-container {
-        margin: 20px;
-        padding: 25px;
+        margin: 15px 10px;
+        padding: 20px 15px;
     }
 
-    .design-grid,
+    .skill-card {
+        padding: 12px;
+    }
+
     .certif-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .certif-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .article-card {
+        padding: 18px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Mode paysage mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section {
+        height: auto;
+        min-height: 100vh;
+        padding: 100px 20px 50px;
+    }
+
+    .sub-header {
+        height: 50vh;
+    }
+
+    .nav-links {
+        width: 50%;
+    }
+}
+
+/* Touch-friendly sur tous mobiles */
+@media (hover: none) and (pointer: coarse) {
+    .btn,
+    .nav-links a,
+    .skill-card,
+    .certif-card,
+    .article-card,
+    .design-card {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Augmenter les zones de clic */
+    .nav-links a {
+        padding: 15px 0;
+    }
+
+    .skill-card {
+        padding: 18px;
+    }
+
+    /* Simplifier les hovers pour le touch */
+    .btn:active {
+        transform: scale(0.95);
+    }
+
+    .certif-card:active img {
+        transform: scale(1.05);
     }
 }
 
