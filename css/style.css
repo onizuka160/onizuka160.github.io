@@ -34,6 +34,7 @@ body {
 }
 
 /* Page d'accueil avec ton fond d'écran */
+/* FIX: background-attachment: scroll au lieu de fixed (mal supporté iOS/Android) */
 .home-page::before {
     content: '';
     position: fixed;
@@ -41,7 +42,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('images/main_backscreen_nils_hamitouche.webp') no-repeat fixed center/cover;
+    background: url('images/main_backscreen_nils_hamitouche.webp') no-repeat scroll center/cover;
     z-index: -2;
 }
 
@@ -63,6 +64,7 @@ body {
 }
 
 /* Grille cyber animée pour sub-pages uniquement */
+/* FIX: ajout de will-change pour optimiser les perfs GPU mobile */
 .sub-page::after {
     content: '';
     position: fixed;
@@ -77,6 +79,7 @@ body {
     animation: gridMove 20s linear infinite;
     z-index: -1;
     pointer-events: none;
+    will-change: transform;
 }
 
 @keyframes gridMove {
@@ -110,6 +113,7 @@ body {
     animation: lightMove 30s ease-in-out infinite;
     z-index: -1;
     pointer-events: none;
+    will-change: transform;
 }
 
 @keyframes lightMove {
@@ -135,6 +139,7 @@ body {
     padding: 20px 5%;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* FIX: prefix Safari */
     z-index: 1000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
@@ -376,6 +381,7 @@ body {
     padding: 40px;
     background: rgba(10, 14, 39, 0.85);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); /* FIX: prefix Safari */
     border-radius: 20px;
     border: 1px solid rgba(0, 212, 255, 0.2);
     box-shadow: 
@@ -792,7 +798,19 @@ body {
 
     body {
         font-size: 15px;
-        background-attachment: scroll; /* Meilleure performance mobile */
+        /* FIX: scroll au lieu de fixed pour les backgrounds sur mobile */
+        background-attachment: scroll;
+    }
+
+    /* FIX: désactiver l'animation de grille sur mobile pour les perfs */
+    .sub-page::after {
+        animation: none;
+    }
+
+    /* FIX: désactiver l'animation de lumière sur mobile pour les perfs */
+    .sub-page .content-container::before,
+    .sub-page .certif-container::before {
+        animation: none;
     }
 
     /* Navigation mobile améliorée */
@@ -844,6 +862,7 @@ body {
         height: 100vh;
         background: rgba(0, 0, 0, 0.98);
         backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px); /* FIX: prefix Safari */
         padding: 80px 30px 30px;
         border-left: 1px solid rgba(255, 255, 255, 0.1);
         gap: 25px;
@@ -1110,5 +1129,6 @@ body {
 .glass-effect {
     background: var(--dark-glass);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); /* FIX: prefix Safari */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
