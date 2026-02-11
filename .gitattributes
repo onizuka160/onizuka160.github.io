@@ -1,2 +1,21 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+
+# 1. Forcer la fin de ligne en LF (évite les bugs de décalage entre Windows et GitHub)
+* text=auto eol=lf
+
+# 2. S'assurer que les fichiers web sont toujours traités comme du texte
+*.html diff=html
+*.css  diff=css
+*.js   diff=javascript
+
+# 3. Traiter les images et médias comme des fichiers binaires (ne pas essayer de les fusionner)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+
+# 4. Forcer les statistiques GitHub (si tu veux que GitHub détecte bien ton HTML/CSS)
+*.html linguist-detectable=true
+*.css  linguist-detectable=true

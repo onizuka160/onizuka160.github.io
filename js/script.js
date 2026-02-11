@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // URL du flux que tu as choisi
-const RSS_URL = 'https://www.lemondeinformatique.fr/flux-rss/thematique/securite/rss.xml';
+const RSS_URL = 'https://www.lemondeinformatique.fr/flux-rss/thematique/reseaux/rss.xml';
 const STORAGE_KEY = 'ma_veille_cache';
 
 async function loadFeed() {
