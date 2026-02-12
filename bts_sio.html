@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon BTS SIO - Portfolio</title>
+    <title>BTS SIO - Portfolio Nils Hamitouche</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="sub-page">
@@ -31,27 +31,35 @@
     </nav>
 
     <header class="sub-header">
-        <h1>BTS Services Informatiques aux Organisations</h1>
-        <p>Présentation du BTS et des deux options</p>
+        <h1 class="text-gradient">BTS SIO</h1>
+        <p style="color: var(--gray); font-size: 0.95rem; margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;">Services Informatiques aux Organisations</p>
     </header>
 
     <main class="content-container">
-        
-        <section class="info-block">
-            <h2>Qu'est-ce que le BTS SIO ?</h2>
-            <p>Le BTS Services Informatiques aux Organisations est un diplôme d'État qui forme aux métiers de la gestion d'un parc informatique ou du développement d'applications logicielles.</p>
+
+        <section>
+            <h2 class="section-title">Qu'est-ce que le BTS SIO ?</h2>
+            <p class="section-intro">
+                Le BTS Services Informatiques aux Organisations est un diplôme d'État de niveau Bac+2 qui forme 
+                en deux ans des techniciens capables de gérer et d'administrer des infrastructures réseaux 
+                ou de développer des solutions logicielles. Très professionnalisant, il combine cours théoriques, 
+                travaux pratiques et stages en entreprise pour une insertion rapide sur le marché du travail.
+                Il propose deux spécialités : <strong style="color: var(--primary);">SISR</strong> pour les infrastructures 
+                et la cybersécurité, et <strong style="color: var(--primary);">SLAM</strong> pour le développement applicatif.
+            </p>
         </section>
 
-        <section class="skills-grid">
+        <section style="margin-top: 40px;">
+            <h2 class="section-title">Les spécialités en détail</h2>
+
             <div class="skill-card" onclick="toggleCard(this)">
                 <div class="skill-header">
                     <h3>Aspects généraux</h3>
                     <span class="toggle-icon">+</span>
                 </div>
                 <div class="skill-content">
-                    <p>Présentation du BTS :</p>
                     <ul>
-                        <li>Le BTS SIO (Services Informatiques aux Organisations) forme en deux ans des techniciens capables de gérer et d'administrer des infrastructures réseaux ou de développer des solutions logicielles.</li>
+                        <li>Le BTS SIO forme en deux ans des techniciens capables de gérer et d'administrer des infrastructures réseaux ou de développer des solutions logicielles.</li>
                         <li>Il propose deux spécialités : SISR pour les passionnés d'infrastructure et de cybersécurité, ou SLAM pour ceux qui préfèrent la programmation et la création d'applications.</li>
                         <li>Ce diplôme très professionnalisant combine cours théoriques, TP concrets et stages en entreprise pour une insertion rapide sur le marché du travail.</li>
                     </ul>
@@ -64,11 +72,10 @@
                     <span class="toggle-icon">+</span>
                 </div>
                 <div class="skill-content">
-                    <p>Présentation de l'option SISR :</p>
                     <ul>
-                        <li>Le pilotage des flux (Routeurs et Switchs) : Tu apprends à configurer des routeurs (le "cerveau" qui relie les réseaux entre eux) et des switchs pour segmenter le trafic via des VLANs. L'objectif est de maîtriser le routage statique et dynamique pour que chaque paquet de données arrive à destination par le chemin le plus rapide et le plus sûr.</li>
-                        <li>L'administration système et services : Au-delà du matériel, tu gères les serveurs qui font vivre l'organisation (Active Directory, DNS, DHCP, Web). Tu apprends à virtualiser ces environnements pour optimiser les ressources et à automatiser les tâches répétitives via des scripts ou des outils comme Kace</li>
-                        <li>La forteresse numérique (Cybersécurité) : La sécurité n'est pas une option mais le fil rouge de la formation ; tu configures des pare-feu (Firewalls), des VPN pour le télétravail et des systèmes de détection d'intrusion. Tu dois garantir la triade D.I.C. (Disponibilité, Intégrité, Confidentialité) des données face aux menaces extérieures.</li>
+                        <li><strong style="color: var(--primary);">Le pilotage des flux (Routeurs et Switchs) :</strong> Configuration de routeurs et switchs pour segmenter le trafic via des VLANs. Maîtrise du routage statique et dynamique pour que chaque paquet de données arrive à destination par le chemin le plus rapide et le plus sûr.</li>
+                        <li><strong style="color: var(--primary);">L'administration système et services :</strong> Gestion des serveurs qui font vivre l'organisation (Active Directory, DNS, DHCP, Web). Virtualisation des environnements et automatisation des tâches via des scripts ou des outils comme Kace.</li>
+                        <li><strong style="color: var(--primary);">La forteresse numérique (Cybersécurité) :</strong> Configuration de pare-feu, VPN pour le télétravail et systèmes de détection d'intrusion. Garantie de la triade D.I.C. (Disponibilité, Intégrité, Confidentialité) des données face aux menaces extérieures.</li>
                     </ul>
                 </div>
             </div>
@@ -79,11 +86,10 @@
                     <span class="toggle-icon">+</span>
                 </div>
                 <div class="skill-content">
-                    <p>Présentation de l'option SLAM :</p>
                     <ul>
-                        <li>L'art du Code (Développement Web et Applicatif) : Tu apprends à structurer et à écrire des programmes robustes. Cela va de la création de sites web dynamiques (souvent en PHP ou JavaScript) à la conception d'applications lourdes pour Windows ou Android (en C# ou Java). L'objectif est de transformer un besoin métier en une interface fluide et fonctionnelle.</li>
-                        <li>Le cœur des données (Bases de données) : Une application sans données ne sert à rien. Tu maîtrises le langage SQL pour concevoir, interroger et sécuriser des bases de données (comme MySQL ou PostgreSQL). Tu apprends à modéliser les informations pour qu'elles soient stockées de manière logique et récupérées instantanément.</li>
-                        <li>La gestion de projet (Méthodes Agiles) : SLAM, ce n'est pas juste "pisser du code" tout seul dans son coin. Tu apprends à travailler en équipe, à utiliser des outils de versioning comme Git (indispensable !) et à respecter des cahiers des charges précis. Tu étudies aussi la cybersécurité applicative pour éviter que tes programmes ne soient piratés par des injections SQL ou des failles XSS.</li>
+                        <li><strong style="color: var(--primary);">L'art du Code (Développement Web et Applicatif) :</strong> Création de sites web dynamiques (PHP, JavaScript) et d'applications (C#, Java). Transformer un besoin métier en une interface fluide et fonctionnelle.</li>
+                        <li><strong style="color: var(--primary);">Le cœur des données (Bases de données) :</strong> Maîtrise du langage SQL pour concevoir, interroger et sécuriser des bases de données (MySQL, PostgreSQL). Modélisation des informations pour un stockage logique et une récupération instantanée.</li>
+                        <li><strong style="color: var(--primary);">La gestion de projet (Méthodes Agiles) :</strong> Travail en équipe, versioning avec Git, respect de cahiers des charges précis. Étude de la cybersécurité applicative pour éviter les injections SQL ou les failles XSS.</li>
                     </ul>
                 </div>
             </div>
@@ -91,6 +97,7 @@
 
     </main>
 
+    <canvas id="canvas-particles"></canvas>
     <script src="js/script.js"></script>
 </body>
 </html>

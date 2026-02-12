@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon BTS SIO - Portfolio</title>
+    <title>Épreuve E5 - Portfolio Nils Hamitouche</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="sub-page">
@@ -20,21 +20,219 @@
         </div>
         <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="profil.html" class="active">Profil</a></li>
+            <li><a href="profil.html">Profil</a></li>
             <li><a href="bts_sio.html">BTS SIO</a></li>
             <li><a href="entreprise.html">Entreprise</a></li>
             <li><a href="certif.html">Certifications</a></li>
-            <li><a href="epreuve_E5.html">E5</a></li>
+            <li><a href="epreuve_E5.html" class="active">E5</a></li>
             <li><a href="epreuve_E6.html">E6</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
+    <!-- Header de la page -->
     <header class="sub-header">
-        <h1>Epreuve E5 - Veille Technologique et Missions d'entreprise</h1>
-        <p>Analyse et suivi des innovations du modèle Zero Trust dans la sécurisation des réseaux d'entreprise ainsi que missions d'entreprise</p>
+        <h1 class="text-gradient">Épreuve E5</h1>
+        <p style="color: var(--gray); font-size: 0.95rem; margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;">BTS SIO — Option SISR</p>
     </header>
 
+    <!-- Contenu principal -->
+    <div class="content-container">
+
+        <!-- Intro E5 -->
+        <section>
+            <h2 class="section-title">Qu'est-ce que l'épreuve E5 ?</h2>
+            <p class="section-intro">
+                L'épreuve E5 du BTS Services Informatiques aux Organisations — option SISR (Solutions d'Infrastructure, Systèmes et Réseaux) 
+                est une épreuve professionnelle orale qui évalue la capacité du candidat à conduire une veille technologique 
+                et à réaliser des missions concrètes en entreprise. Elle se déroule en deux parties distinctes, 
+                chacune reflétant un aspect essentiel du métier d'administrateur systèmes et réseaux.
+            </p>
+        </section>
+
+        <!-- Deux cards de détail -->
+        <div class="design-grid" style="margin-top: 40px;">
+
+            <!-- Card Veille Techno -->
+            <div class="design-card">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                    <div style="
+                        width: 40px; height: 40px; border-radius: 10px;
+                        background: rgba(0, 212, 255, 0.1);
+                        border: 1px solid rgba(0, 212, 255, 0.3);
+                        display: flex; align-items: center; justify-content: center;
+                        font-size: 1.2rem; flex-shrink: 0;">
+                        📡
+                    </div>
+                    <h3 class="design-card-title" style="margin-bottom: 0;">Veille Technologique</h3>
+                </div>
+                <p class="design-card-text">
+                    La veille technologique consiste à surveiller en continu les évolutions du secteur informatique 
+                    afin d'anticiper les changements et d'adapter les pratiques professionnelles. Dans le cadre du BTS SIO SISR, 
+                    elle porte sur des thématiques liées à la cybersécurité, aux infrastructures réseau, aux systèmes d'exploitation 
+                    et aux nouvelles technologies cloud.
+                </p>
+                <p class="design-card-text" style="margin-top: 12px;">
+                    Le candidat doit démontrer sa capacité à identifier des sources fiables, analyser des informations techniques 
+                    et présenter une synthèse structurée sur un sujet d'actualité du domaine SISR.
+                </p>
+            </div>
+
+            <!-- Card Missions Entreprise -->
+            <div class="design-card">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                    <div style="
+                        width: 40px; height: 40px; border-radius: 10px;
+                        background: rgba(0, 212, 255, 0.1);
+                        border: 1px solid rgba(0, 212, 255, 0.3);
+                        display: flex; align-items: center; justify-content: center;
+                        font-size: 1.2rem; flex-shrink: 0;">
+                        🏢
+                    </div>
+                    <h3 class="design-card-title" style="margin-bottom: 0;">Missions en Entreprise</h3>
+                </div>
+                <p class="design-card-text">
+                    Les missions en entreprise correspondent aux travaux réalisés en stage ou en alternance. 
+                    Elles illustrent les compétences techniques acquises en conditions réelles : 
+                    déploiement d'infrastructures, administration de serveurs, configuration réseau, 
+                    mise en place de solutions de sécurité, ou encore gestion des utilisateurs.
+                </p>
+                <p class="design-card-text" style="margin-top: 12px;">
+                    Chaque mission est documentée sous forme de fiche de situation professionnelle, 
+                    présentant le contexte, les objectifs, les actions menées et les résultats obtenus.
+                </p>
+            </div>
+        </div>
+
+        <!-- Séparateur avec info complémentaire -->
+        <div class="flux-info-box" style="margin-top: 40px;">
+            <h3>Déroulement de l'oral E5</h3>
+            <ul>
+                <li>Durée totale de l'épreuve : <strong style="color: var(--primary);">40 minutes</strong></li>
+                <li>Présentation de la veille technologique : <strong style="color: var(--primary);">10 minutes</strong> + échange avec le jury</li>
+                <li>Présentation des missions professionnelles : <strong style="color: var(--primary);">10 minutes</strong> + échange avec le jury</li>
+                <li>Coefficient : <strong style="color: var(--primary);">3</strong> — épreuve déterminante pour l'obtention du diplôme</li>
+                <li>Support autorisé : dossier papier ou numérique préparé en amont</li>
+            </ul>
+        </div>
+
+        <!-- Boutons d'accès -->
+        <section style="margin-top: 50px; text-align: center;">
+            <h2 class="section-title" style="text-align: left;">Accéder à mes E5</h2>
+            <p class="section-intro" style="margin-bottom: 35px;">
+                Retrouvez ci-dessous le détail de ma veille technologique et de mes missions réalisées en entreprise.
+            </p>
+
+            <div style="
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;">
+
+                <!-- Bouton Veille Techno -->
+                <a href="E5/veille_techno_E5.html" style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 30px 40px;
+                    background: rgba(0, 212, 255, 0.05);
+                    border: 1px solid rgba(0, 212, 255, 0.3);
+                    border-radius: 16px;
+                    text-decoration: none;
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    min-width: 220px;
+                    position: relative;
+                    overflow: hidden;">
+                    <span style="font-size: 2rem;">📡</span>
+                    <span style="
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 700;
+                        font-size: 0.85rem;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        color: var(--primary);">
+                        Veille Technologique
+                    </span>
+                    <span style="
+                        font-size: 0.78rem;
+                        color: var(--gray);
+                        font-weight: 300;">
+                        Voir le dossier →
+                    </span>
+                    <div style="
+                        position: absolute;
+                        bottom: 0; left: 0;
+                        width: 100%; height: 3px;
+                        background: linear-gradient(90deg, transparent, var(--primary), transparent);
+                        opacity: 0;
+                        transition: opacity 0.3s ease;"
+                        class="btn-underline">
+                    </div>
+                </a>
+
+                <!-- Bouton Missions Entreprise -->
+                <a href="E5/missions_entreprise_E5.html" style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 12px;
+                    padding: 30px 40px;
+                    background: rgba(0, 212, 255, 0.05);
+                    border: 1px solid rgba(0, 212, 255, 0.3);
+                    border-radius: 16px;
+                    text-decoration: none;
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    min-width: 220px;
+                    position: relative;
+                    overflow: hidden;">
+                    <span style="font-size: 2rem;">🏢</span>
+                    <span style="
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 700;
+                        font-size: 0.85rem;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        color: var(--primary);">
+                        Missions Entreprise
+                    </span>
+                    <span style="
+                        font-size: 0.78rem;
+                        color: var(--gray);
+                        font-weight: 300;">
+                        Voir le dossier →
+                    </span>
+                </a>
+
+            </div>
+        </section>
+
+    </div>
+
+    <canvas id="canvas-particles"></canvas>
     <script src="js/script.js"></script>
+
+    <!-- Hover effect sur les boutons cards -->
+    <script>
+        document.querySelectorAll('a[href*="E5/"]').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.background = 'rgba(0, 212, 255, 0.10)';
+                btn.style.borderColor = 'rgba(0, 212, 255, 0.7)';
+                btn.style.transform = 'translateY(-5px)';
+                btn.style.boxShadow = '0 15px 35px rgba(0,0,0,0.4), 0 0 25px rgba(0, 212, 255, 0.2)';
+                const underline = btn.querySelector('.btn-underline');
+                if (underline) underline.style.opacity = '1';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.background = 'rgba(0, 212, 255, 0.05)';
+                btn.style.borderColor = 'rgba(0, 212, 255, 0.3)';
+                btn.style.transform = 'translateY(0)';
+                btn.style.boxShadow = 'none';
+                const underline = btn.querySelector('.btn-underline');
+                if (underline) underline.style.opacity = '0';
+            });
+        });
+    </script>
+
 </body>
 </html>

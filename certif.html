@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications - Portfolio</title>
-
+    <title>Certifications - Portfolio Nils Hamitouche</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap">
@@ -13,16 +12,13 @@
 
 <body class="sub-page">
 
-    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo">NILS HAMITOUCHE</div>
-
         <div class="menu-hamburger" id="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
-
         <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="profil.html">Profil</a></li>
@@ -35,36 +31,32 @@
         </ul>
     </nav>
 
-    <!-- HEADER -->
     <header class="sub-header">
-        <h1>Mes Certifications</h1>
-        <p>Classées par domaine de compétences</p>
+        <h1 class="text-gradient">Certifications</h1>
+        <p style="color: var(--gray); font-size: 0.95rem; margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;">Classées par domaine de compétences</p>
     </header>
 
-    <!-- CONTENU -->
     <section class="content-container">
+
+        <h2 class="section-title">Mes domaines</h2>
 
         <div class="certif-grid">
 
-            <!-- RÉSEAUX -->
             <a href="certif/certif_reseau.html" class="certif-card">
                 <img src="css/images/main_reseau.webp" alt="Certifications Réseau">
                 <div class="certif-label">Réseaux & Infrastructures</div>
             </a>
 
-            <!-- CYBERSÉCURITÉ -->
             <a href="certif/certif_cybersecurite.html" class="certif-card">
                 <img src="css/images/main_cybersecurite.webp" alt="Certifications Cybersécurité">
                 <div class="certif-label">Cybersécurité</div>
             </a>
 
-            <!-- CLOUD -->
             <a href="certif/certif_cloud.html" class="certif-card">
                 <img src="css/images/main_cloud.webp" alt="Certifications Cloud">
                 <div class="certif-label">Cloud & DevOps</div>
             </a>
 
-            <!-- DÉVELOPPEMENT -->
             <a href="certif/certif_dev.html" class="certif-card">
                 <img src="css/images/main_dev.webp" alt="Certifications Développement">
                 <div class="certif-label">Développement</div>
@@ -74,7 +66,7 @@
 
     </section>
 
+    <canvas id="canvas-particles"></canvas>
     <script src="js/script.js"></script>
-
 </body>
 </html>
