@@ -220,9 +220,107 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.toggle('active');
         });
     });
+
+    // --- PARTIE 6 : FOND CYBER (INDEX UNIQUEMENT) ---
+    // Défile des snippets de code cybersécurité en arrière-plan
+    const isIndex = window.location.pathname.endsWith('index.html')
+        || window.location.pathname === '/'
+        || window.location.pathname === '';
+
+    if (isIndex) {
+        const bgCanvas = document.getElementById('bg-matrix');
+        if (!bgCanvas) return;
+
+        const bgCtx = bgCanvas.getContext('2d');
+
+        const snippets = [
+            'ssh root@192.168.1.1',
+            'nmap -sV -p 1-65535',
+            'chmod 700 /etc/ssl/private',
+            'firewall-cmd --add-port=443/tcp',
+            'openssl req -x509 -newkey rsa:4096',
+            'fail2ban-client status sshd',
+            'iptables -A INPUT -j DROP',
+            'gpg --verify signature.sig',
+            'tcpdump -i eth0 port 80',
+            'sudo ufw enable',
+            'cat /var/log/auth.log | grep Failed',
+            'netstat -tulnp',
+            'curl -s https://api.threatintel.io',
+            'certbot renew --quiet',
+            'auditctl -w /etc/passwd -p wa',
+            'snort -A console -c snort.conf',
+            'nikto -host 10.0.0.1',
+            '> /dev/null 2>&1 &',
+            'TLS_AES_256_GCM_SHA384',
+            'CVE-2024-1234 [CRITICAL]',
+            'ENCRYPTED: 3f8a9c2d1b...',
+            '0x7ffe | 0x00ff & 0x1a2b',
+            'ACCESS GRANTED',
+            'FIREWALL ACTIVE',
+            'INTRUSION DETECTED',
+            'PACKET FILTERED',
+            '[ OK ] Vault sealed',
+        ];
+
+        let columns = [];
+        const FONT_SIZE = 13;
+        const LINE_SPACING = 28;
+
+        function resizeBg() {
+            bgCanvas.width  = window.innerWidth;
+            bgCanvas.height = window.innerHeight;
+            initColumns();
+        }
+
+        function initColumns() {
+            columns = [];
+            const count = Math.floor(bgCanvas.width / 220);
+            for (let i = 0; i < count; i++) {
+                columns.push({
+                    x:       (bgCanvas.width / count) * i + Math.random() * 60,
+                    y:       Math.random() * -bgCanvas.height,
+                    speed:   0.3 + Math.random() * 0.5,
+                    snippet: snippets[Math.floor(Math.random() * snippets.length)],
+                    opacity: 0.05 + Math.random() * 0.12,
+                    cyan:    Math.random() > 0.7,
+                });
+            }
+        }
+
+        function drawBg() {
+            bgCtx.fillStyle = 'rgba(3, 6, 15, 0.25)';
+            bgCtx.fillRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+            bgCtx.font = `${FONT_SIZE}px 'Courier New', monospace`;
+
+            columns.forEach(col => {
+                bgCtx.fillStyle = col.cyan
+                    ? `rgba(0, 212, 255, ${col.opacity})`
+                    : `rgba(26, 107, 122, ${col.opacity})`;
+
+                bgCtx.fillText(col.snippet, col.x, col.y);
+                col.y += LINE_SPACING * col.speed;
+
+                if (col.y > bgCanvas.height + 40) {
+                    col.y       = -LINE_SPACING;
+                    col.snippet = snippets[Math.floor(Math.random() * snippets.length)];
+                    col.opacity = 0.04 + Math.random() * 0.13;
+                    col.speed   = 0.3 + Math.random() * 0.5;
+                    col.cyan    = Math.random() > 0.7;
+                }
+            });
+
+            requestAnimationFrame(drawBg);
+        }
+
+        window.addEventListener('resize', resizeBg);
+        resizeBg();
+        drawBg();
+    }
 });
 
-// --- PARTIE 6 : FLUX RSS VEILLE TECHNOLOGIQUE ---
+// --- PARTIE 7 : FLUX RSS VEILLE TECHNOLOGIQUE ---
 const RSS_URL = 'https://news.google.com/rss/search?q=Zero+Trust+Network+Access+security&hl=fr&gl=FR&ceid=FR:fr';
 const STORAGE_KEY = 'ma_veille_cache';
 

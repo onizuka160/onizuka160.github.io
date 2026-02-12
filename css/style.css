@@ -35,16 +35,7 @@ body {
 
 /* Page d'accueil avec ton fond d'écran */
 /* FIX: background-attachment: scroll au lieu de fixed (mal supporté iOS/Android) */
-.home-page::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('images/main_backscreen_nils_hamitouche.webp') no-repeat scroll center/cover;
-    z-index: -2;
-}
+
 
 .home-page {
     height: 100vh;
