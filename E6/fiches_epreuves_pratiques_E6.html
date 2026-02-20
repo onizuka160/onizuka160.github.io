@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets E6 - Portfolio Nils Hamitouche</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="sub-page">
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="logo">NILS HAMITOUCHE</div>
+
+        <div class="menu-hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="../profil.html">Profil</a></li>
+            <li><a href="../bts_sio.html">BTS SIO</a></li>
+            <li><a href="../entreprise.html">Entreprise</a></li>
+            <li><a href="../certif.html">Certifications</a></li>
+            <li><a href="../epreuve_E5.html">E5</a></li>
+            <li><a href="../epreuve_E6.html" class="active">E6</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="sub-header">
+        <h1 class="text-gradient">Mes Projets E6</h1>
+        <p style="color: var(--gray); font-size: 0.95rem; margin-top: 8px; letter-spacing: 2px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;">Projets d'Infrastructure — Épreuve E6</p>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="content-container">
+
+        <!-- Intro -->
+        <section>
+            <h2 class="section-title">Situations professionnelles</h2>
+            <p class="section-intro">
+                Retrouvez ci-dessous mes projets d'infrastructure réalisés dans le cadre de l'épreuve E6. 
+                Chaque projet illustre une situation professionnelle complète : de l'analyse du besoin 
+                à la mise en production, en passant par la conception technique et la documentation.
+            </p>
+        </section>
+
+        <!-- Grid des projets -->
+        <div class="design-grid" style="margin-top: 40px;">
+
+            <!-- Projet 1 -->
+            <a href="../css/images/pdf/Fiches_situation_E6/Fiche_descriptive_infra_réseau_SwitchL3_SISR.pdf" target="_blank" style="
+                display: flex;
+                flex-direction: column;
+                padding: 30px;
+                background: rgba(0, 212, 255, 0.05);
+                border: 1px solid rgba(0, 212, 255, 0.3);
+                border-radius: 16px;
+                text-decoration: none;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                position: relative;
+                overflow: hidden;"
+                class="projet-card">
+                
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                    <div style="
+                        width: 40px; height: 40px; border-radius: 10px;
+                        background: rgba(0, 212, 255, 0.1);
+                        border: 1px solid rgba(0, 212, 255, 0.3);
+                        display: flex; align-items: center; justify-content: center;
+                        font-size: 1.2rem; flex-shrink: 0;">
+                        📄
+                    </div>
+                    <h3 style="
+                        font-family: 'Montserrat', sans-serif;
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                        color: var(--text);
+                        margin: 0;">
+                        Projet Infrastructure réseau 1
+                    </h3>
+                </div>
+
+                <p style="
+                    color: var(--gray);
+                    font-size: 0.9rem;
+                    line-height: 1.6;
+                    margin-bottom: 20px;">
+                    Mise en place d'une infrastructure réseau avec segmentation VLAN sur un Switch Cisco Layer 3 ayant un accès à Internet.
+                </p>
+
+                <div style="
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    color: var(--primary);
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    margin-top: auto;">
+                    <span>Voir le PDF</span>
+                    <span>→</span>
+                </div>
+
+                <div style="
+                    position: absolute;
+                    bottom: 0; left: 0;
+                    width: 100%; height: 3px;
+                    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;"
+                    class="projet-underline">
+                </div>
+            </a>
+
+            <!-- Projet 2 - Placeholder -->
+            <div class="design-card" style="
+                border: 2px dashed rgba(0, 212, 255, 0.3);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 250px;
+                text-align: center;">
+                
+                <div style="
+                    width: 60px; height: 60px; border-radius: 50%;
+                    background: rgba(0, 212, 255, 0.1);
+                    border: 1px solid rgba(0, 212, 255, 0.3);
+                    display: flex; align-items: center; justify-content: center;
+                    font-size: 1.8rem;
+                    margin-bottom: 20px;">
+                    ➕
+                </div>
+                
+                <h3 style="
+                    font-family: 'Montserrat', sans-serif;
+                    color: var(--gray);
+                    font-size: 0.9rem;
+                    margin-bottom: 10px;">
+                    Prochain projet
+                </h3>
+                
+                <p style="
+                    color: var(--gray);
+                    font-size: 0.8rem;
+                    opacity: 0.7;">
+                    En cours de réalisation
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Bouton retour -->
+        <section style="margin-top: 50px; text-align: center;">
+            <a href="../epreuve_E6.html" style="
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                padding: 15px 30px;
+                background: rgba(0, 212, 255, 0.05);
+                border: 1px solid rgba(0, 212, 255, 0.3);
+                border-radius: 10px;
+                text-decoration: none;
+                color: var(--text);
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 600;
+                font-size: 0.85rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: all 0.3s ease;"
+                class="btn-retour">
+                <span>←</span>
+                <span>Retour à l'épreuve E6</span>
+            </a>
+        </section>
+
+    </main>
+
+    <canvas id="canvas-particles"></canvas>
+    <script src="../js/script.js"></script>
+
+    <!-- Hover effects -->
+    <script>
+        // Hover sur les cartes de projets
+        document.querySelectorAll('.projet-card').forEach(card => {
+            const underline = card.querySelector('.projet-underline');
+            
+            card.addEventListener('mouseenter', () => {
+                card.style.background = 'rgba(0, 212, 255, 0.10)';
+                card.style.borderColor = 'rgba(0, 212, 255, 0.7)';
+                card.style.transform = 'translateY(-5px)';
+                card.style.boxShadow = '0 15px 35px rgba(0,0,0,0.4), 0 0 25px rgba(0, 212, 255, 0.2)';
+                if (underline) underline.style.opacity = '1';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.background = 'rgba(0, 212, 255, 0.05)';
+                card.style.borderColor = 'rgba(0, 212, 255, 0.3)';
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'none';
+                if (underline) underline.style.opacity = '0';
+            });
+        });
+
+        // Hover sur le bouton retour
+        const btnRetour = document.querySelector('.btn-retour');
+        btnRetour.addEventListener('mouseenter', () => {
+            btnRetour.style.background = 'rgba(0, 212, 255, 0.10)';
+            btnRetour.style.borderColor = 'rgba(0, 212, 255, 0.7)';
+            btnRetour.style.transform = 'translateX(-5px)';
+        });
+        btnRetour.addEventListener('mouseleave', () => {
+            btnRetour.style.background = 'rgba(0, 212, 255, 0.05)';
+            btnRetour.style.borderColor = 'rgba(0, 212, 255, 0.3)';
+            btnRetour.style.transform = 'translateX(0)';
+        });
+    </script>
+
+</body>
+</html>
